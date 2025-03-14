@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Principal</title>
+    <title>Subir Archivo PDF</title>
+    <link rel="stylesheet" href="/css/sty.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Subir Archivo PDF</h1>
+        <form id="formularioSubir">
+            <div class="form-group">
+                <label for="archivo">Selecciona un archivo PDF:</label>
+                <input type="file" id="archivo" name="archivo" accept=".pdf" required>
+            </div>
+            <button type="submit" class="btn">Subir Archivo</button>
+        </form>
+        <div id="mensaje" class="mensaje"></div>
+    </div>
+
+    <script src="/js/script.js"></script>
 </body>
 </html>
