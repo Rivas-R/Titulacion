@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px; /* Espacio alrededor del contenedor */
+}
+
+.Documento {
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    display: flex; /* Flexbox para alinear título y lista */
+    flex-direction: column; /* Apila elementos verticalmente */
+}
+
+.titulo {
+    align-self: flex-start; /* Título a la izquierda */
+    font-weight:bold ;
+    margin-bottom: 20px; 
+}
+
+.lista-documentos {
+    align-self: center; /* Lista centrada */
+    width: 80%; /* Ancho opcional para la lista */
+}
+
+.Documento-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #FFFEFE;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; 
+}
+.Documento-item:hover {
+    transform: translateY(-3px); /* Efecto hover */
+}
+.icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
