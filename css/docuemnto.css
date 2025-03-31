@@ -6,44 +6,112 @@
 
 body {
     font-family: Arial, sans-serif;
-    padding: 20px; /* Espacio alrededor del contenedor */
+    padding: 20px; 
 }
 
 .Documento {
     width: 50%;
     height: auto;
     padding: 20px;
-    display: flex; /* Flexbox para alinear título y lista */
-    flex-direction: column; /* Apila elementos verticalmente */
+    display: flex; 
+    flex-direction: column; 
 }
 
 .titulo {
-    align-self: flex-start; /* Título a la izquierda */
+    align-self: flex-start; 
     font-weight:bold ;
     margin-bottom: 20px; 
 }
 
 .lista-documentos {
-    align-self: center; /* Lista centrada */
-    width: 80%; /* Ancho opcional para la lista */
+    align-self: center; 
+    width: 80%;
+    list-style: none;
 }
 
 .Documento-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.documento-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     background: #FFFEFE;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
     transition: transform 0.3s; 
 }
-.Documento-item:hover {
-    transform: translateY(-3px); /* Efecto hover */
+
+.Documento-item:hover .documento-header {
+    transform: translateY(-3px); 
 }
+
 .icon {
     width: 20px;
     height: 20px;
+    transition: transform 0.3s;
+}
+
+.documento-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out; /* Aumenté la duración para mejor visualización */
+    background-color: #f9f9f9;
+    height: auto;
+    overflow-y: auto; /* Para contenido que exceda el 50vh */
+}
+
+.documento-content.active {
+    min-height: 120px; /* Altura mínima */
+    padding: 15px;
+}
+
+.icon.rotated {
+    transform: rotate(180deg);
+}
+
+.file-input {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Añade esto al final de tu CSS existente */
+
+.documento-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
     cursor: pointer;
 }
+
+.documento-content img {
+    max-width: 100%;
+    max-height: 70px; /* Ajusta según necesites */
+    object-fit: contain;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.documento-content:hover img {
+    transform: scale(1.05);
+}
+
+.file-input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.documento-content {
+    position: relative;
+    text-align: center;
+}
+
