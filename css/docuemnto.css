@@ -1,3 +1,4 @@
+/* ===== RESET Y ESTILOS BASE ===== */
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@ body {
     padding: 20px; 
 }
 
+/* ===== CONTENEDOR PRINCIPAL ===== */
 .Documento {
     width: 50%;
     height: auto;
@@ -19,7 +21,7 @@ body {
 
 .titulo {
     align-self: flex-start; 
-    font-weight:bold ;
+    font-weight: bold;
     margin-bottom: 20px; 
 }
 
@@ -29,12 +31,14 @@ body {
     list-style: none;
 }
 
+/* ===== ITEMS DE DOCUMENTO ===== */
 .Documento-item {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Añadido para bordes redondeados consistentes */
 }
 
 .documento-header {
@@ -57,42 +61,41 @@ body {
     transition: transform 0.3s;
 }
 
-.documento-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out; /* Aumenté la duración para mejor visualización */
-    background-color: #f9f9f9;
-    height: auto;
-    overflow-y: auto; /* Para contenido que exceda el 50vh */
-}
-
-.documento-content.active {
-    min-height: 120px; /* Altura mínima */
-    padding: 15px;
-}
-
 .icon.rotated {
     transform: rotate(180deg);
 }
 
-.file-input {
-    margin-top: 10px;
-    width: 100%;
+/* ===== CONTENIDO DESPLEGABLE ===== */
+.documento-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: #f9f9f9;
+    position: relative;
+    text-align: center;
 }
 
-/* Añade esto al final de tu CSS existente */
+.documento-content.active {
+    min-height: 120px;
+    padding: 15px;
+    overflow-y: auto;
+}
 
-.documento-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
+/* ===== INPUT DE ARCHIVO ===== */
+.file-input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
 }
 
+/* ===== PREVISUALIZACIÓN DE IMÁGENES ===== */
 .documento-content img {
     max-width: 100%;
-    max-height: 70px; /* Ajusta según necesites */
+    max-height: 70px;
     object-fit: contain;
     padding: 20px;
     transition: transform 0.3s;
@@ -102,16 +105,117 @@ body {
     transform: scale(1.05);
 }
 
-.file-input {
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: 0;
+/* ===== PREVISUALIZACIÓN DE DOCUMENTOS ===== */
+.document-preview,
+.pdf-preview-container {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     cursor: pointer;
 }
 
-.documento-content {
-    position: relative;
-    text-align: center;
+.document-preview img,
+.pdf-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
 }
 
+.file-info,
+.pdf-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 90%;
+}
+
+.file-name,
+.pdf-name {
+    font-weight: bold;
+    color: #333;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.file-size,
+.pdf-size {
+    color: #666;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.remove-file,
+.pdf-remove {
+    margin-top: 8px;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.pdf-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.pdf-view {
+    color: #3498db;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ===== MODAL PARA VISUALIZAR PDF ===== */
+.pdf-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdf-modal-content {
+    width: 80%;
+    height: 90%;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-modal-header {
+    padding: 15px;
+    background: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pdf-modal-title {
+    font-weight: bold;
+}
+
+.pdf-modal-close {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.pdf-modal-iframe {
+    flex-grow: 1;
+    border: none;
+}
