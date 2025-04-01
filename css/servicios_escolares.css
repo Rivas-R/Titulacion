@@ -1,0 +1,125 @@
+/* Tabs */
+.nav-tabs {
+    display: flex;
+    justify-content: space-between; /* Evenly distribute tabs */
+    background-color: #1B646B;
+    padding: 0;
+    margin-bottom: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure each tab takes equal space */
+.nav-tabs .nav-item {
+    flex-grow: 1; /* Make each tab take equal space */
+    text-align: center; /* Center text inside tabs */
+}
+
+/* Style for individual tabs */
+.nav-tabs .nav-link {
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 15px 0; /* Adjust padding for better spacing */
+    width: 100%; /* Ensure the button stretches */
+}
+
+/* Change tab hover effect */
+.nav-tabs .nav-link:hover {
+    background-color: #1B646B;
+}
+
+/* Active tab styling */
+.nav-tabs .nav-link.active {
+    background-color: #1B646B;
+    color: white;
+    border-bottom: 5px solid white;
+}
+
+/* Busqueda */
+.search {
+    padding: 20px 30px;
+}
+
+
+/* Tabla de alumnos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+    text-align: left;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #467FDB;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hidden row details */
+.row-details {
+    display: none;
+    background-color: #eef5ff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+}
+
+.footer {
+    background-color: #ccd8ed;
+    padding: 40px;
+}
+
+.pdf-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* PDF Container */
+.pdf-container {
+    position: relative;
+    width: 80%;
+    height: 90%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Close Button - More Normal Style */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 16px;
+    background: #ccc;
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #bbb;
+}
+
+/* PDF Viewer */
+.pdf-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
