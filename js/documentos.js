@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const documentosItems = document.querySelectorAll('.Documento-item');
-    const pdfIcon = '../img/pdf.png';
+    const pdfIcon = '../../img/pdf.png';
     
     // Crear modal para visualizar PDF
     const modal = document.createElement('div');
@@ -60,10 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="pdf-left-section">
                             <img src="${pdfIcon}" class="pdf-icon" alt="PDF Icon">
                             <span class="pdf-name">${file.name}</span>
-                        </div>
-                        <div class="pdf-actions">
+                            <div class="pdf-actions">
                             <span class="pdf-remove">Eliminar</span>
                         </div>
+                        </div>
+                        
                     </div>
                 `;
                 

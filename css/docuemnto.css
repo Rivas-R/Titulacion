@@ -7,17 +7,42 @@
 
 body {
     font-family: Arial, sans-serif;
-    padding: 20px; 
 }
 
+
 /* ===== CONTENEDOR PRINCIPAL ===== */
-.Documento {
-    width: 50%;
+.contenedor {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos */
+    align-items: flex-start; 
+    width: 100%;
+    padding: 20px;
+}
+
+/* ==== LISTA (IZQUIERDA) ==== */
+.lista {
+    position: fixed; /* Siempre visible en la misma posición */
+    left: 20px; /* Separación desde el borde izquierdo */
+    top: 50%; /* La centra verticalmente */
+    transform: translateY(-50%); /* Ajusta el centro vertical */
+    width: 200px; 
     height: auto;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+/* ==== DOCUMENTO (DERECHA) ==== */
+.Documento {
+    width: 50%; /* Mantiene el tamaño original */
+    height: auto; /* No cambia la altura */
     padding: 20px;
     display: flex; 
-    flex-direction: column; 
+    flex-direction: column;
+    position: absolute; right: 0;
 }
+
 
 .titulo {
     align-self: flex-start; 
@@ -105,74 +130,68 @@ body {
     transform: scale(1.05);
 }
 
-/* ===== PREVISUALIZACIÓN DE DOCUMENTOS ===== */
-.document-preview,
+/* ===== PREVISUALIZACIÓN DE PDF ===== */
 .pdf-preview-container {
-    width: 100%;
-    height: 70px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    cursor: pointer;
+    gap: 5px; /* Reducir el espacio entre elementos */
 }
 
-.document-preview img,
+.pdf-left-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5px; /* Espacio inferior reducido */
+}
+
 .pdf-icon {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
-.file-info,
 .pdf-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 90%;
+    flex-grow: 1;
+    min-width: 0;
 }
 
-.file-name,
-.pdf-name {
-    font-weight: bold;
-    color: #333;
-    max-width: 1000px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    font-size: 14px;
-}
-
-.file-size,
-.pdf-size {
-    color: #666;
-    font-size: 10px;
-    margin-top: 5px;
-}
-
-.remove-file,
-.pdf-remove {
-    margin-top: 8px;
-    color: #e74c3c;
-    cursor: pointer;
-    font-size: 12px;
-    text-decoration: underline;
-}
-
+/* Contenedor de acciones - modificado para posición más arriba */
 .pdf-actions {
-    margin-top: 10px;
     display: flex;
     justify-content: flex-end;
-    gap: 15px;
+    margin-top: 0; /* Eliminar margen superior */
+    gap: 10px;
+    border-top: 1px solid #eee; /* Línea opcional para separación visual */
 }
 
-.pdf-view {
-    color: #3498db;
-    font-size: 12px;
-    text-decoration: underline;
+/* Botones - ajustes para mejor integración */
+.pdf-view, .pdf-remove {
+    padding: 5px 10px; /* Padding ligeramente reducido */
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+/* Mantener colores y efectos hover */
+.pdf-view {
+    background-color: #3498db;
+    color: white;
+}
+
+.pdf-view:hover {
+    background-color: #2980b9;
+}
+
+.pdf-remove {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.pdf-remove:hover {
+    background-color: #c0392b;
 }
 
 /* ===== MODAL PARA VISUALIZAR PDF ===== */
@@ -183,37 +202,47 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.9);
     z-index: 1000;
     justify-content: center;
     align-items: center;
 }
 
 .pdf-modal-content {
-    width: 80%;
-    height: 90%;
+    width: 90%;
+    max-width: 900px;
+    height: 90vh;
     background: white;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
 }
 
 .pdf-modal-header {
-    padding: 15px;
-    background: #f1f1f1;
+    padding: 15px 20px;
+    background: #2c3e50;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .pdf-modal-title {
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .pdf-modal-close {
+    color: white;
+    font-size: 24px;
     cursor: pointer;
-    font-size: 20px;
+    transition: transform 0.2s;
+}
+
+.pdf-modal-close:hover {
+    transform: scale(1.2);
 }
 
 .pdf-modal-iframe {
