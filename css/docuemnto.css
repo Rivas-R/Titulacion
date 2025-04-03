@@ -22,20 +22,20 @@ body {
 /* ==== LISTA (IZQUIERDA) ==== */
 .lista {
     position: fixed; /* Siempre visible en la misma posición */
-    left: 20px; /* Separación desde el borde izquierdo */
+    left: 100px; /* Separación desde el borde izquierdo */
     top: 50%; /* La centra verticalmente */
     transform: translateY(-50%); /* Ajusta el centro vertical */
-    width: 200px; 
+    width: 300px; 
     height: auto;
     background: white;
-    padding: 15px;
+    padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     border-radius: 8px;
 }
 
 /* ==== DOCUMENTO (DERECHA) ==== */
 .Documento {
-    width: 50%; /* Mantiene el tamaño original */
+    width: 60%; /* Mantiene el tamaño original */
     height: auto; /* No cambia la altura */
     padding: 20px;
     display: flex; 
@@ -51,7 +51,6 @@ body {
 }
 
 .lista-documentos {
-    align-self: center; 
     width: 80%;
     list-style: none;
 }
@@ -61,7 +60,6 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden; /* Añadido para bordes redondeados consistentes */
 }
