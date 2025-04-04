@@ -13,35 +13,63 @@ body {
 /* ===== CONTENEDOR PRINCIPAL ===== */
 .contenedor {
     display: flex;
-    justify-content: space-between; /* Distribuye los elementos */
+    justify-content: space-between; 
     align-items: flex-start; 
     width: 100%;
     padding: 20px;
+    padding-left: 100px;
 }
+
+
 
 /* ==== LISTA (IZQUIERDA) ==== */
 .lista {
-    position: fixed; /* Siempre visible en la misma posición */
-    left: 100px; /* Separación desde el borde izquierdo */
-    top: 50%; /* La centra verticalmente */
-    transform: translateY(-50%); /* Ajusta el centro vertical */
     width: 300px; 
     height: auto;
     background: white;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    border-radius: 8px;
+    padding-top: 0;
+
+}
+.nav-item:nth-child(1) .nav-box {
+    border-bottom: 2px solid #E87A2B;
 }
 
+.nav-item:nth-child(n +3) .nav-box {
+    border-top: 2px solid #BEBEBE;
+}
+
+.nav-box{
+    height: 70px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item:not(:first-child).active .nav-box {
+    background-color: #BEBEBE;
+}
+
+.nav-item a{
+    text-decoration: none;
+}
+
+.nav-box p{
+    color: black;
+    padding: 0;
+    margin: 0;
+}
 /* ==== DOCUMENTO (DERECHA) ==== */
 .Documento {
-    width: 60%; /* Mantiene el tamaño original */
+    width: 65%; /* Mantiene el tamaño original */
     height: auto; /* No cambia la altura */
     padding: 20px;
     display: flex; 
     flex-direction: column;
     position: absolute; right: 0;
 }
+
 
 
 .titulo {
@@ -54,6 +82,7 @@ body {
     width: 80%;
     list-style: none;
 }
+
 
 /* ===== ITEMS DE DOCUMENTO ===== */
 .Documento-item {
@@ -104,6 +133,25 @@ body {
     overflow-y: auto;
 }
 
+
+/* ===== BOTONES ===== */
+
+.lista-documentos li:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.Documento-button {
+
+    height: 40px;
+    width: 30%;
+    background: #E87A2B;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+}
 /* ===== INPUT DE ARCHIVO ===== */
 .file-input {
     position: absolute;

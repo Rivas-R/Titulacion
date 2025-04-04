@@ -126,3 +126,19 @@ document.addEventListener('DOMContentLoaded', function() {
         setupDocumentItem(item);
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const navItems = document.querySelectorAll(".nav-item");
+
+    navItems.forEach(item => {
+        item.addEventListener("click", function (e) {
+            e.preventDefault(); // Evita que el enlace recargue la página
+            
+            // Remueve la clase 'active' de todos los elementos
+            navItems.forEach(nav => nav.classList.remove("active"));
+
+            // Agrega la clase 'active' al elemento seleccionado
+            this.classList.add("active");
+        });
+    });
+});
