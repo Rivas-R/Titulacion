@@ -57,14 +57,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Crear vista previa del PDF
                 const previewHTML = `
                     <div class="pdf-preview-container" data-pdf-url="${URL.createObjectURL(file)}">
-                        <div class="pdf-left-section">
+                        <div class="pdf-preview-left">
                             <img src="${pdfIcon}" class="pdf-icon" alt="PDF Icon">
+                        </div>
+                        <div class="pdf-preview-center">
                             <span class="pdf-name">${file.name}</span>
-                            <div class="pdf-actions">
+                        </div>
+                        <div class="pdf-preview-right">
                             <span class="pdf-remove">Eliminar</span>
                         </div>
-                        </div>
-                        
                     </div>
                 `;
                 
@@ -116,9 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function resetFileInput(item) {
         const content = item.querySelector('.documento-content');
         
-        // Restaurar el estado inicial
+        // Restaurar el estado inicial con el ícono de subir
         content.innerHTML = `
-            <img src="../img/subir.png" alt="">
+            <div class="upload-icon-container">
+                <img src="../../img/subir.png" alt="Subir archivo" class="upload-icon">
+            </div>
             <input type="file" class="file-input" accept=".pdf">
         `;
         
