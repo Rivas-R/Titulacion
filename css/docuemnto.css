@@ -53,6 +53,20 @@ body {
 
 .nav-item a{
     text-decoration: none;
+    transition: opacity 0.3s, cursor 0.3s;
+}
+
+.nav-item a[style*="pointer-events: none"] {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+.nav-item a[style*="pointer-events: none"] .nav-box {
+    background-color: #f5f5f5;
+}
+
+.nav-item a[style*="pointer-events: none"]:hover {
+    opacity: 0.5 !important;
 }
 
 .nav-box p{
@@ -91,7 +105,8 @@ body {
     flex-direction: column;
     margin-bottom: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Añadido para bordes redondeados consistentes */
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .documento-header {
@@ -104,18 +119,40 @@ body {
     transition: transform 0.3s; 
 }
 
-.Documento-item:hover .documento-header {
-    transform: translateY(-3px); 
+.documento-header .icon-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.documento-header img:not(.icon) {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s;
+    object-fit: contain;
 }
 
 .icon {
     width: 20px;
     height: 20px;
     transition: transform 0.3s;
+    object-fit: contain;
 }
 
 .icon.rotated {
     transform: rotate(180deg);
+}
+
+.documento-header img.revision-icon {
+    display: none;
+    width: 35px;
+    height: 35px;
+}
+
+.documento-header.show-revision img.revision-icon,
+.documento-header.show-segunda-revision img.revision-icon,
+.documento-header.show-rechazado img.revision-icon {
+    display: block;
 }
 
 /* ===== CONTENIDO DESPLEGABLE ===== */
@@ -129,11 +166,17 @@ body {
 }
 
 .documento-content.active {
-    min-height: 120px;
-    padding: 15px;
+    min-height: 130px;
+    padding: 10px;
     overflow-y: auto;
 }
 
+.documento-content p {
+    padding: 15px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
 
 /* ===== BOTONES ===== */
 
@@ -220,9 +263,10 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     background-color: #f9f9f9;
     border-radius: 5px;
+    min-height: 100px;
 }
 
 .pdf-preview-left {
@@ -245,8 +289,8 @@ body {
 }
 
 .pdf-icon {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     padding: 0;
     margin: 0;
@@ -254,9 +298,10 @@ body {
 }
 
 .pdf-name {
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
     word-break: break-word;
+    margin-left: 15px;
 }
 
 .pdf-remove {
@@ -327,4 +372,92 @@ body {
 .pdf-modal-iframe {
     flex-grow: 1;
     border: none;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.revision-button, .segunda-revision-button, .rechazar-button {
+    height: 40px;
+    width: auto;
+    min-width: 150px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.revision-button {
+    background: #1B646B;
+}
+
+.segunda-revision-button {
+    background: #E87A2B;
+    display: none;
+}
+
+.rechazar-button {
+    background: #dc3545;
+}
+
+.revision-button:disabled, .segunda-revision-button:disabled, .rechazar-button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.revision-button:hover:not(:disabled) {
+    background: #154d52;
+}
+
+.segunda-revision-button:hover:not(:disabled) {
+    background: #c65f1c;
+}
+
+.rechazar-button:hover:not(:disabled) {
+    background: #bd2130;
+}
+
+.constancia-section.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+    user-select: none;
+}
+
+.constancia-section.disabled * {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.constancia-section.disabled a {
+    pointer-events: none;
+    color: #999;
+    text-decoration: none;
+}
+
+.constancia-section.disabled button,
+.constancia-section.disabled input {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.btn-siguiente-seccion {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.btn-siguiente-seccion:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
 }
