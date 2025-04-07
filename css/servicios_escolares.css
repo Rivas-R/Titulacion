@@ -1,6 +1,7 @@
 /* Header con nav-bar principal */
 .navbar {
-    background-color: #1B646B
+    background-color: #1B646B;
+    padding-bottom: 0px;
 }
 
 /* Tabs */
@@ -8,10 +9,10 @@
     display: flex;
     justify-content: space-between; /* Evenly distribute tabs */
     background-color: #1B646B;
-    padding-top: 5px;
     margin-bottom: 0;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Ensure each tab takes equal space */
 .nav-tabs .nav-item {
@@ -24,7 +25,9 @@
     color: white;
     font-weight: regular;
     border: none;
-    padding: 15px 0; /* Adjust padding for better spacing */
+
+    padding-bottom: 10px;
+    
     width: 100%; /* Ensure the button stretches */
 }
 

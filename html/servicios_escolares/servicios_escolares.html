@@ -10,7 +10,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
     <!-- styleshetts -->
-    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/header_se.css">
     <link rel="stylesheet" href="../../css/servicios_escolares.css">
     <link rel="stylesheet" href="../../css/tab_tables.css">
 
@@ -34,26 +34,14 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Guia</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Etapas
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item active" href="#">General</a></li>
-                            <li><a class="dropdown-item" href="#">Nuevos</a></li>
-                            <li><a class="dropdown-item" href="#">Documentos</a></li>
-                            <li><a class="dropdown-item" href="#">Segunda Revicion</a></li>
-                            <li><a class="dropdown-item" href="#">Linea de Pago</a></li>
-                            <li><a class="dropdown-item" href="#">CNI</a></li>
-                        </ul>
-                    </li>
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Rivas
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Preferencias</a></li>
-                            <li><a class="dropdown-item" href="#">Otra cosa</a></li>
+                            <li><a class="dropdown-item" href="#">Otras opciones</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
                         </ul>
@@ -70,7 +58,7 @@
         <!-- Tab General -->
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">
-                General
+                Solicitudes Actuales
                 <!--<span class="badge bg-danger rounded-circle">3</span> -->
             </button>
           </li>
@@ -78,7 +66,7 @@
         <!-- Tab de cuentas nuevas -->
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="nuevas-tab" data-bs-toggle="tab" data-bs-target="#cuentas_nuevas" type="button" role="tab" aria-controls="cuentas_nuevas" aria-selected="true">
-                Cuentas Nuevas
+                Nuevas Solicitudes
                 <span class="badge bg-danger rounded-circle">3</span>
             </button>
         </li>
@@ -86,7 +74,7 @@
         <!-- Tab activa de Documentos -->
         <li class="nav-item " role="presentation">
             <button class="nav-link" id="documentos-tab" data-bs-toggle="tab" data-bs-target="#documentos" type="button" role="tab" aria-controls="documentos" aria-selected="false">
-                Documentos
+                Revisión de Documentos
                 <span class="badge bg-danger rounded-circle">2</span>
             </button>
         </li>
@@ -94,15 +82,7 @@
         <!-- Tab activa de Documentos -->
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="segunda-tab" data-bs-toggle="tab" data-bs-target="#segunda_revicion" type="button" role="tab" aria-controls="segunda_revicion" aria-selected="false">
-              Segunda Revicion
-              <span class="badge bg-danger rounded-circle">1</span>
-            </button>
-          </li>
-
-        <!-- Tab con numero de pendientes -->
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pago-tab" data-bs-toggle="tab" data-bs-target="#linea_pago" type="button" role="tab" aria-controls="linea_pago" aria-selected="false">
-              Lineas de pago 
+              Segunda Revisión
               <span class="badge bg-danger rounded-circle">1</span>
             </button>
           </li>
@@ -110,7 +90,7 @@
         <!-- Tab CNI -->
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="cni-tab" data-bs-toggle="tab" data-bs-target="#cni" type="button" role="tab" aria-controls="cni" aria-selected="false">
-                CNI
+                Constancia de No Inconveniencia
                 <span class="badge bg-danger rounded-circle">2</span>
             </button>
         </li>
@@ -140,9 +120,6 @@
 
         <!-- Tab con tabla segunda revicion -->
         <div class="tab-pane fade segunda_revicion" id="segunda_revicion" role="tabpanel" aria-labelledby="segunda_revicion">...</div>
-
-        <!-- Tab con tabla linea de pago -->
-        <div class="tab-pane fade linea_pago" id="linea_pago" role="tabpanel" aria-labelledby="linea_pago"></div>
 
         <!-- Tab con tabla cni -->
         <div class="tab-pane fade cni" id="cni" role="tabpanel" aria-labelledby="cni"></div>

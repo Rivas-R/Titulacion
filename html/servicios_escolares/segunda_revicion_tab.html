@@ -42,7 +42,7 @@
                                     <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
                                 </td>
                                 <td>
-                                    <i class="fa-solid fa-book"></i>
+                                    <i class="fa-solid fa-book" onclick="historial(this)"></i>
                                 </td>
                                 <td>Pendiente</td>
                                 <td>
@@ -51,21 +51,7 @@
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td>Constancia de Preparatoria</td>
-                                <td>
-                                    <i class="fa-solid fa-file-pdf"></i>
-                                </td>
-                                <td>
-                                    <i class="fa-solid fa-book"></i>
-                                </td>
-                                <td>Rechazado</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
-                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
-                                </td>
-                            </tr>
-
+                            
                             <tr>
                                 <td>Curp</td>
                                 <td>
@@ -81,35 +67,175 @@
                                 </td>
                             </tr>
 
-                        </tbody>
-                    </table>
-                    <div style="height: 30px;"></div>
-                    <table class="inner-table">
-
-                        <thead align="center">
-                            <!-- Nombre de las columans de la tabla de egresados -->
                             <tr>
-                                <th>Documento</th>
-                                <th>Subir Archivo</th>
-                                <th>Estatus</th>
-                            </tr>
-                        </thead>
-
-                        <tbody align="center">
-                            <tr>
-                                <td>Linea de Pago</td>
+                                <td>Certificado de Preparatoria</td>
                                 <td>
-                                    <i class="fa-solid fa-upload"></i>
-                                   <!-- <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>-->
+                                    <i class="fa-solid fa-file-pdf"></i>
                                 </td>
                                 <td>
-                                    Pendiente
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
                                 </td>
                             </tr>
 
+                            <tr>
+                                <td>*Dictamen de Revalidación o Equivalencia</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Liberacion de Servicio Social</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Liberacion de Informe Tecnico</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>**Acreditación del idioma inglés</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>***Liberación de Prácticas profesionales</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Licenciatura</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Generacion del Certificado Digital de Firma Electronica</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 1</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 2</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Fotografias</td>
+                                <td>
+                                    Se entregan en persona
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>Rechazado</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
+                                </td>
+                            </tr>
 
                         </tbody>
                     </table>
+                    
                 </div>
                 <div style="text-align: center; margin-top: 20px;">
                     <button type="button" class="btn btn-success">Enviar</button>
