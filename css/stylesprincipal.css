@@ -1,0 +1,168 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Fondo completamente blanco */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Barra de navegación */
+.nav-bar {
+    background-color: #1a2b50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+.nav-bar nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+/* Contenido principal */   
+main {
+    text-align: center;
+    background-color: #ffffff;
+    color: black;
+    padding: 30px;
+    flex-grow: 1;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+/* Sección de instrucciones */
+.instructions h2 {
+    color: #e67e22;
+}
+
+.video-placeholder {
+    width: 300px;
+    height: 200px;
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.play-button {
+    color: red;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.login-box {
+    background-color: #1a2b50;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+
+    /* ⬇️ Tamaño igual al del video */
+    width: 560px;
+    height: 315px; /* Ajusta la altura para que coincida */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */
+}
+
+/* Pestañas de selección */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tabs button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 2px solid white;
+}
+
+/* Formulario de inicio de sesión */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Botón de inicio de sesión */
+.login-btn {
+    background-color: #e67e22;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Enlaces adicionales */
+.links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Pie de página */
+.footer {
+    background-color: #ccc; /* Gris claro */
+    color: #333;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Sección de instrucciones */
+.instructions h2 {
+    color: #e67e22;
+}
+
+/* Sección de instrucciones */
+.instructions h2 {
+    color: #e67e22;
+}
+
+.video-placeholder {
+    /* ⬇️ Modifica el tamaño del fondo del video aquí */
+    width: 560px;  /* Ancho del contenedor (fondo) */
+    height: 315px; /* Alto del contenedor (fondo) */
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Asegúrate de que el iframe (video) no cambie de tamaño */
+.video-placeholder iframe {
+    width: 100%;  /* Esto hace que el video se ajuste al tamaño del contenedor */
+    height: 100%; /* Mantiene la proporción de alto del contenedor */
+}
