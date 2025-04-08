@@ -65,13 +65,13 @@ main {
 
 .login-box {
     background-color: #1a2b50;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 25px;
+    border-radius: 10px;
     color: white;
 
     /* ⬇️ Tamaño igual al del video */
-    width: 560px;
-    height: 315px; /* Ajusta la altura para que coincida */
+    width: 580px;
+    height: 350px; /* Ajusta la altura para que coincida */
 
     display: flex;
     flex-direction: column;
