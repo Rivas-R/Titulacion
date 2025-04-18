@@ -85,23 +85,30 @@ document.addEventListener('DOMContentLoaded', function() {
             return !headerText.includes('Fotografías') && !item.querySelector('.buttons-container');
         });
 
-        let todosSubidos = true;
+        let todosDocumentosSubidos = true;
 
         documentosRequeridos.forEach(item => {
             const contenido = item.querySelector('.documento-content');
             if (!contenido.querySelector('.pdf-preview-container')) {
-                todosSubidos = false;
+                todosDocumentosSubidos = false;
             }
         });
 
-        if (btnPrimeraRevision) {
-            btnPrimeraRevision.disabled = !todosSubidos;
-            btnPrimeraRevision.style.opacity = todosSubidos ? '1' : '0.5';
+        // Solo habilitar el botón Continuar cuando todos los documentos estén subidos
+        if (btnContinuarDocumentos) {
+            btnContinuarDocumentos.disabled = !todosDocumentosSubidos;
+            btnContinuarDocumentos.style.opacity = todosDocumentosSubidos ? '1' : '0.5';
         }
-        
-        if (btnRechazar && todosSubidos) {
-            btnRechazar.disabled = false;
-            btnRechazar.style.opacity = '1';
+
+        // Mantener los botones de revisión y rechazo deshabilitados
+        if (btnPrimeraRevision) {
+            btnPrimeraRevision.disabled = true;
+            btnPrimeraRevision.style.opacity = '0.5';
+        }
+
+        if (btnRechazar) {
+            btnRechazar.disabled = true;
+            btnRechazar.style.opacity = '0.5';
         }
     }
 
@@ -113,24 +120,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const contenido = pagoItem.querySelector('.documento-content');
         const pagoSubido = contenido.querySelector('.pdf-preview-container') !== null;
 
-        // Habilitar/deshabilitar botones de revisión según el estado del pago
+        // Solo habilitar el botón Continuar cuando el pago esté subido
+        if (btnContinuarPagos) {
+            btnContinuarPagos.disabled = !pagoSubido;
+            btnContinuarPagos.style.opacity = pagoSubido ? '1' : '0.5';
+        }
+
+        // Mantener los botones de revisión y rechazo deshabilitados
         if (btnPrimeraRevisionPago) {
-            btnPrimeraRevisionPago.disabled = !pagoSubido;
-            btnPrimeraRevisionPago.style.opacity = pagoSubido ? '1' : '0.5';
+            btnPrimeraRevisionPago.disabled = true;
+            btnPrimeraRevisionPago.style.opacity = '0.5';
         }
-        
+
         if (btnRechazarPago) {
-            btnRechazarPago.disabled = !pagoSubido;
-            btnRechazarPago.style.opacity = pagoSubido ? '1' : '0.5';
-        }
-        
-        // Si no hay pago subido, asegurarse de que el botón de segunda revisión esté oculto
-        if (btnSegundaRevisionPago) {
-            if (!pagoSubido) {
-                btnSegundaRevisionPago.style.display = 'none';
-                btnSegundaRevisionPago.disabled = true;
-                btnSegundaRevisionPago.style.opacity = '0.5';
-            }
+            btnRechazarPago.disabled = true;
+            btnRechazarPago.style.opacity = '0.5';
         }
     }
     
@@ -469,19 +473,65 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Modificar el evento del botón continuar de documentos
+    // Modificar el evento del botón Continuar
     if (btnContinuarDocumentos) {
         btnContinuarDocumentos.addEventListener('click', function() {
-            documentosRevisados = true;
-            verificarProgreso();
+            // Cambiar los iconos a revisión
+            const headers = document.querySelectorAll('.lista-documentos .documento-header');
+            headers.forEach(header => {
+                if (!header.querySelector('p').textContent.includes('Fotografías')) {
+                    const revisionIcon = header.querySelector('.revision-icon');
+                    if (revisionIcon) {
+                        revisionIcon.src = '../../img/revision.png';
+                        header.classList.add('show-revision');
+                    }
+                }
+            });
+
+            // Habilitar botones de revisión y rechazo
+            if (btnPrimeraRevision) {
+                btnPrimeraRevision.disabled = false;
+                btnPrimeraRevision.style.opacity = '1';
+            }
+
+            if (btnRechazar) {
+                btnRechazar.disabled = false;
+                btnRechazar.style.opacity = '1';
+            }
+
+            // Deshabilitar el botón Continuar después de usarlo
+            this.disabled = true;
+            this.style.opacity = '0.5';
         });
     }
 
-    // Modificar el evento del botón continuar de pagos
+    // Modificar el evento del botón Continuar de pagos
     if (btnContinuarPagos) {
         btnContinuarPagos.addEventListener('click', function() {
-            pagosRevisados = true;
-            verificarProgreso();
+            // Cambiar el icono a revisión
+            const header = document.querySelector('.lista-pago .documento-header');
+            if (header) {
+                const revisionIcon = header.querySelector('.revision-icon');
+                if (revisionIcon) {
+                    revisionIcon.src = '../../img/revision.png';
+                    header.classList.add('show-revision');
+                }
+            }
+
+            // Habilitar botones de revisión y rechazo
+            if (btnPrimeraRevisionPago) {
+                btnPrimeraRevisionPago.disabled = false;
+                btnPrimeraRevisionPago.style.opacity = '1';
+            }
+
+            if (btnRechazarPago) {
+                btnRechazarPago.disabled = false;
+                btnRechazarPago.style.opacity = '1';
+            }
+
+            // Deshabilitar el botón Continuar después de usarlo
+            this.disabled = true;
+            this.style.opacity = '0.5';
         });
     }
 
@@ -490,4 +540,5 @@ document.addEventListener('DOMContentLoaded', function() {
     verificarPago();
     verificarProgreso();
 });
+
 

@@ -461,3 +461,42 @@ body {
     cursor: not-allowed;
     pointer-events: none;
 }
+
+/* Estilos para las pestañas verticales */
+.d-flex {
+    margin-top: 20px;
+}
+
+.nav-pills {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 1rem;
+}
+
+.nav-pills .nav-link {
+    color: #495057;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.nav-pills .nav-link:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+.tab-content {
+    flex: 1;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.tab-pane {
+    padding: 1rem;
+}
