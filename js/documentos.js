@@ -539,6 +539,33 @@ document.addEventListener('DOMContentLoaded', function() {
     verificarDocumentos();
     verificarPago();
     verificarProgreso();
+
+    // Función para cargar el contenido de p_revicion.html
+    function cargarRevisionDocumentos() {
+        const enlaceRevision = document.querySelector('.lista .nav-item a[href="../estudiante/documento.html"]');
+        if (enlaceRevision) {
+            enlaceRevision.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Cargar el contenido de p_revicion.html
+                fetch('../estudiante/p_revicion.html')
+                    .then(response => response.text())
+                    .then(html => {
+                        // Reemplazar el contenido actual
+                        const documentoContent = document.querySelector('.Documento');
+                        if (documentoContent) {
+                            documentoContent.innerHTML = html;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar p_revicion.html:', error);
+                    });
+            });
+        }
+    }
+
+    // Inicializar la carga de revisión de documentos
+    cargarRevisionDocumentos();
 });
 
 
