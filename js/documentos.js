@@ -85,30 +85,23 @@ document.addEventListener('DOMContentLoaded', function() {
             return !headerText.includes('Fotografías') && !item.querySelector('.buttons-container');
         });
 
-        let todosDocumentosSubidos = true;
+        let todosSubidos = true;
 
         documentosRequeridos.forEach(item => {
             const contenido = item.querySelector('.documento-content');
             if (!contenido.querySelector('.pdf-preview-container')) {
-                todosDocumentosSubidos = false;
+                todosSubidos = false;
             }
         });
 
-        // Solo habilitar el botón Continuar cuando todos los documentos estén subidos
-        if (btnContinuarDocumentos) {
-            btnContinuarDocumentos.disabled = !todosDocumentosSubidos;
-            btnContinuarDocumentos.style.opacity = todosDocumentosSubidos ? '1' : '0.5';
-        }
-
-        // Mantener los botones de revisión y rechazo deshabilitados
         if (btnPrimeraRevision) {
-            btnPrimeraRevision.disabled = true;
-            btnPrimeraRevision.style.opacity = '0.5';
+            btnPrimeraRevision.disabled = !todosSubidos;
+            btnPrimeraRevision.style.opacity = todosSubidos ? '1' : '0.5';
         }
-
-        if (btnRechazar) {
-            btnRechazar.disabled = true;
-            btnRechazar.style.opacity = '0.5';
+        
+        if (btnRechazar && todosSubidos) {
+            btnRechazar.disabled = false;
+            btnRechazar.style.opacity = '1';
         }
     }
 
@@ -120,21 +113,24 @@ document.addEventListener('DOMContentLoaded', function() {
         const contenido = pagoItem.querySelector('.documento-content');
         const pagoSubido = contenido.querySelector('.pdf-preview-container') !== null;
 
-        // Solo habilitar el botón Continuar cuando el pago esté subido
-        if (btnContinuarPagos) {
-            btnContinuarPagos.disabled = !pagoSubido;
-            btnContinuarPagos.style.opacity = pagoSubido ? '1' : '0.5';
-        }
-
-        // Mantener los botones de revisión y rechazo deshabilitados
+        // Habilitar/deshabilitar botones de revisión según el estado del pago
         if (btnPrimeraRevisionPago) {
-            btnPrimeraRevisionPago.disabled = true;
-            btnPrimeraRevisionPago.style.opacity = '0.5';
+            btnPrimeraRevisionPago.disabled = !pagoSubido;
+            btnPrimeraRevisionPago.style.opacity = pagoSubido ? '1' : '0.5';
         }
-
+        
         if (btnRechazarPago) {
-            btnRechazarPago.disabled = true;
-            btnRechazarPago.style.opacity = '0.5';
+            btnRechazarPago.disabled = !pagoSubido;
+            btnRechazarPago.style.opacity = pagoSubido ? '1' : '0.5';
+        }
+        
+        // Si no hay pago subido, asegurarse de que el botón de segunda revisión esté oculto
+        if (btnSegundaRevisionPago) {
+            if (!pagoSubido) {
+                btnSegundaRevisionPago.style.display = 'none';
+                btnSegundaRevisionPago.disabled = true;
+                btnSegundaRevisionPago.style.opacity = '0.5';
+            }
         }
     }
     
@@ -473,65 +469,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Modificar el evento del botón Continuar
+    // Modificar el evento del botón continuar de documentos
     if (btnContinuarDocumentos) {
         btnContinuarDocumentos.addEventListener('click', function() {
-            // Cambiar los iconos a revisión
-            const headers = document.querySelectorAll('.lista-documentos .documento-header');
-            headers.forEach(header => {
-                if (!header.querySelector('p').textContent.includes('Fotografías')) {
-                    const revisionIcon = header.querySelector('.revision-icon');
-                    if (revisionIcon) {
-                        revisionIcon.src = '../../img/revision.png';
-                        header.classList.add('show-revision');
-                    }
-                }
-            });
-
-            // Habilitar botones de revisión y rechazo
-            if (btnPrimeraRevision) {
-                btnPrimeraRevision.disabled = false;
-                btnPrimeraRevision.style.opacity = '1';
-            }
-
-            if (btnRechazar) {
-                btnRechazar.disabled = false;
-                btnRechazar.style.opacity = '1';
-            }
-
-            // Deshabilitar el botón Continuar después de usarlo
-            this.disabled = true;
-            this.style.opacity = '0.5';
+            documentosRevisados = true;
+            verificarProgreso();
         });
     }
 
-    // Modificar el evento del botón Continuar de pagos
+    // Modificar el evento del botón continuar de pagos
     if (btnContinuarPagos) {
         btnContinuarPagos.addEventListener('click', function() {
-            // Cambiar el icono a revisión
-            const header = document.querySelector('.lista-pago .documento-header');
-            if (header) {
-                const revisionIcon = header.querySelector('.revision-icon');
-                if (revisionIcon) {
-                    revisionIcon.src = '../../img/revision.png';
-                    header.classList.add('show-revision');
-                }
-            }
-
-            // Habilitar botones de revisión y rechazo
-            if (btnPrimeraRevisionPago) {
-                btnPrimeraRevisionPago.disabled = false;
-                btnPrimeraRevisionPago.style.opacity = '1';
-            }
-
-            if (btnRechazarPago) {
-                btnRechazarPago.disabled = false;
-                btnRechazarPago.style.opacity = '1';
-            }
-
-            // Deshabilitar el botón Continuar después de usarlo
-            this.disabled = true;
-            this.style.opacity = '0.5';
+            pagosRevisados = true;
+            verificarProgreso();
         });
     }
 
@@ -539,33 +489,4 @@ document.addEventListener('DOMContentLoaded', function() {
     verificarDocumentos();
     verificarPago();
     verificarProgreso();
-
-    // Función para cargar el contenido de p_revicion.html
-    function cargarRevisionDocumentos() {
-        const enlaceRevision = document.querySelector('.lista .nav-item a[href="../estudiante/documento.html"]');
-        if (enlaceRevision) {
-            enlaceRevision.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Cargar el contenido de p_revicion.html
-                fetch('../estudiante/p_revicion.html')
-                    .then(response => response.text())
-                    .then(html => {
-                        // Reemplazar el contenido actual
-                        const documentoContent = document.querySelector('.Documento');
-                        if (documentoContent) {
-                            documentoContent.innerHTML = html;
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error al cargar p_revicion.html:', error);
-                    });
-            });
-        }
-    }
-
-    // Inicializar la carga de revisión de documentos
-    cargarRevisionDocumentos();
 });
-
-
