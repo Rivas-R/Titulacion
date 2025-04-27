@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Fondo completamente blanco */
+    background-color: #ffffff; /* Fondo  blanco */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -48,13 +48,18 @@ main {
 }
 
 .video-placeholder {
-    width: 300px;
-    height: 200px;
+    width: 700px;  /* Ancho del contenedor (fondo) */
+    height: 420px; /* Alto del contenedor (fondo) */
     background-color: #444;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+}
+
+.video-placeholder iframe {
+    width: 100%;
+    height: 100%;
 }
 
 .play-button {
@@ -65,23 +70,21 @@ main {
 
 .login-box {
     background-color: #1a2b50;
-    padding: 25px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 12px;
     color: white;
-
-    /* ⬇️ Tamaño igual al del video */
-    width: 580px;
-    height: 350px; /* Ajusta la altura para que coincida */
-
+    width: 400px;
+    height: 320px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra verticalmente el contenido */
+    justify-content: center;
 }
 
 /* Pestañas de selección */
 .tabs {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 50px;
 }
 
 .tabs button {
@@ -93,20 +96,21 @@ main {
 }
 
 .active {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 /* Formulario de inicio de sesión */
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 input {
-    padding: 8px;
-    border-radius: 5px;
-    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: white;
 }
 
 /* Botón de inicio de sesión */
@@ -140,29 +144,15 @@ input {
     padding: 15px;
 }
 
-/* Sección de instrucciones */
-.instructions h2 {
-    color: #e67e22;
-}
+/* Responsivo */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* Sección de instrucciones */
-.instructions h2 {
-    color: #e67e22;
-}
-
-.video-placeholder {
-    /* ⬇️ Modifica el tamaño del fondo del video aquí */
-    width: 560px;  /* Ancho del contenedor (fondo) */
-    height: 315px; /* Alto del contenedor (fondo) */
-    background-color: #444;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-/* Asegúrate de que el iframe (video) no cambie de tamaño */
-.video-placeholder iframe {
-    width: 100%;  /* Esto hace que el video se ajuste al tamaño del contenedor */
-    height: 100%; /* Mantiene la proporción de alto del contenedor */
+    .login-box, .video-placeholder {
+        width: 90%;
+        height: auto;
+    }
 }
