@@ -74,7 +74,6 @@ main {
     border-radius: 12px;
     color: white;
     width: 400px;
-    height: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
