@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- styleshetts -->
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/docuemnto.css"> 
+</head>
+<body>
+    <!-- Header NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <!-- Legenda en la izquierda -->
+            <a class="navbar-brand" href="#">Instituto Tecnológico de Mexicali</a>
+
+            <!-- Hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Items de navegacion -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Rivas
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Revicion de Documentos</a></li>
+                            <li><a class="dropdown-item" href="#">Segunda Revicion</a></li>
+                        </ul>
+
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Preferencias</a></li>
+                            <li><a class="dropdown-item" href="#">Otra cosa</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    
+    <!-- Subheader con Titulo de la Pagina -->
+    <div class="subheader">
+        <h1>Validacion de documentos</h1>
+    </div>
+    <div class="d-flex align-items-start">
+        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                Revicion de Documentos
+            </button>
+            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                Segunda Revicion
+            </button>
+            <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                ....
+            </button>
+        </div>
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+          </div>
+          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+        
+
+        
+
+    <!-- Tabs con las diferentes tablas -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <!-- Nombres de las pestañas -->
+        <!-- Tab General -->
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">
+                General
+                <!--<span class="badge bg-danger rounded-circle">3</span> -->
+            </button>
+          </li>
+        
+        <!-- Tab de cuentas nuevas -->
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="nuevas-tab" data-bs-toggle="tab" data-bs-target="#cuentas_nuevas" type="button" role="tab" aria-controls="cuentas_nuevas" aria-selected="true">
+                Cuentas Nuevas
+                <span class="badge bg-danger rounded-circle">3</span>
+            </button>
+        </li>
+
+        <!-- Tab activa de Documentos -->
+        <li class="nav-item " role="presentation">
+            <button class="nav-link" id="documentos-tab" data-bs-toggle="tab" data-bs-target="#documentos" type="button" role="tab" aria-controls="documentos" aria-selected="false">
+                Documentos
+                <span class="badge bg-danger rounded-circle">2</span>
+            </button>
+        </li>
+
+        <!-- Tab activa de Documentos -->
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="segunda-tab" data-bs-toggle="tab" data-bs-target="#segunda_revicion" type="button" role="tab" aria-controls="segunda_revicion" aria-selected="false">
+              Segunda Revicion
+              <span class="badge bg-danger rounded-circle">1</span>
+            </button>
+          </li>
+
+        <!-- Tab con numero de pendientes -->
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pago-tab" data-bs-toggle="tab" data-bs-target="#linea_pago" type="button" role="tab" aria-controls="linea_pago" aria-selected="false">
+              Lineas de pago 
+              <span class="badge bg-danger rounded-circle">1</span>
+            </button>
+          </li>
+
+        <!-- Tab CNI -->
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="cni-tab" data-bs-toggle="tab" data-bs-target="#cni" type="button" role="tab" aria-controls="cni" aria-selected="false">
+                CNI
+                <span class="badge bg-danger rounded-circle">2</span>
+            </button>
+        </li>
+    </ul>
+</div>
+    <script src="../../js/documentos.js"></script>
+</body>
+</html>
