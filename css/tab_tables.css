@@ -1,0 +1,63 @@
+/* Tabla de alumnos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+    text-align: left;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #1B396A;
+    color: white;
+}
+
+/* Hidden row details */
+.row-details {
+    display: none;
+    background-color: #eef5ff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+}
+
+table .inner-table th{
+        background-color: #0b083a;
+        color: white;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content-table {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content button {
+    margin: 5px;
+}

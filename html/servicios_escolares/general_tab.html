@@ -1,0 +1,1478 @@
+<table>
+    <thead>
+        <!-- Nombre de las columans de la tabla de egresados -->
+        <tr>
+            <th>Nombre</th>
+            <th>Numero de Control</th>
+            <th>Correo Electronico</th>
+            <th>Etapa</th>
+            <th>Tiempo en Espera</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <!-- Fila de la tabla -->
+        <tr onclick="toggleDetails(this)">
+            <td>Carlos Ramírez</td>
+            <td>20478364</td>
+            <td>Carlitos@example.com</td>
+            <td>Documentos</td>
+            <td>3 dias</td>
+        </tr>
+
+        <!-- Panel desplegable del egresado -->
+        <tr class="row-details">
+            <td colspan="5">
+                <div style="display: flex; justify-content: space-between; padding: 15px;">
+                    <table class="inner-table">
+
+                        <thead align="center">
+                            <!-- Nombre de las columans de la tabla de egresados -->
+                            <tr>
+                                <th>Documento</th>
+                                <th>Abrir archivo</th>
+                                <th>Historial</th>
+                                <th>Estatus</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody align="center">
+                            <tr>
+                                <td>Acta de nacimemieto</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book" onclick="historial(this)"></i>
+                                </td>
+                                <td>Pendiente</td>
+                                
+                            </tr>
+
+                            
+                            <tr>
+                                <td>Curp</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Aceptado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Preparatoria</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>*Dictamen de Revalidación o Equivalencia</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Liberacion de Servicio Social</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+
+                            <tr>
+                                <td>Liberacion de Informe Tecnico</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>**Acreditación del idioma inglés</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>***Liberación de Prácticas profesionales</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Licenciatura</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Generacion del Certificado Digital de Firma Electronica</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 1</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 2</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" class="btn btn-success">Descargar Documentos</button>
+                </div>
+            </td>
+        </tr>
+        
+        <!-- Fila de la tabla -->
+        <tr onclick="toggleDetails(this)">
+            <td>Valeria Torres</td>
+            <td>21472364</td>
+            <td>Val@example.com</td>
+            <td>Cuenta Nueva</td>
+            <td>3 dias</td>
+        </tr>
+
+        <!-- Panel desplegable del egresado -->
+        <tr class="row-details">
+            <td colspan="5">
+                <div style="display: flex; justify-content: space-between; padding: 15px;">
+                    <table class="inner-table">
+
+                        <thead align="center">
+                            <!-- Nombre de las columans de la tabla de egresados -->
+                            <tr>
+                                <th>Documento</th>
+                                <th>Abrir archivo</th>
+                                <th>Historial</th>
+                                <th>Estatus</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody align="center">
+                            <tr>
+                                <td>Acta de nacimemieto</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book" onclick="historial(this)"></i>
+                                </td>
+                                <td>Pendiente</td>
+                                
+                            </tr>
+
+                            
+                            <tr>
+                                <td>Curp</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Aceptado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Preparatoria</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>*Dictamen de Revalidación o Equivalencia</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Liberacion de Servicio Social</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+
+                            <tr>
+                                <td>Liberacion de Informe Tecnico</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>**Acreditación del idioma inglés</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>***Liberación de Prácticas profesionales</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Licenciatura</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Generacion del Certificado Digital de Firma Electronica</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 1</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 2</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" class="btn btn-success">Descargar Documentos</button>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Fila de la tabla -->
+        <tr onclick="toggleDetails(this)">
+            <td>Carlos Ramírez</td>
+            <td>20478364</td>
+            <td>Carlitos@example.com</td>
+            <td>Cuenta Nueva</td>
+            <td>18 horas</td>
+        </tr>
+
+        <!-- Panel desplegable del egresado -->
+        <tr class="row-details">
+            <td colspan="5">
+                <div style="display: flex; justify-content: space-between; padding: 15px;">
+                    <table class="inner-table">
+
+                        <thead align="center">
+                            <!-- Nombre de las columans de la tabla de egresados -->
+                            <tr>
+                                <th>Documento</th>
+                                <th>Abrir archivo</th>
+                                <th>Historial</th>
+                                <th>Estatus</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody align="center">
+                            <tr>
+                                <td>Acta de nacimemieto</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book" onclick="historial(this)"></i>
+                                </td>
+                                <td>Pendiente</td>
+                                
+                            </tr>
+
+                            
+                            <tr>
+                                <td>Curp</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Aceptado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Preparatoria</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>*Dictamen de Revalidación o Equivalencia</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Liberacion de Servicio Social</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+
+                            <tr>
+                                <td>Liberacion de Informe Tecnico</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>**Acreditación del idioma inglés</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>***Liberación de Prácticas profesionales</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Licenciatura</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Generacion del Certificado Digital de Firma Electronica</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 1</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 2</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" class="btn btn-success">Descargar Documentos</button>
+                </div>
+            </td>
+        </tr>
+        
+        <!-- Fila de la tabla -->
+        <tr onclick="toggleDetails(this)">
+            <td>Valeria Torres</td>
+            <td>21472364</td>
+            <td>Val@example.com</td>
+            <td>Segunda Revicion</td>
+            <td>12 horas</td>
+        </tr>
+
+        <!-- Panel desplegable del egresado -->
+        <tr class="row-details">
+            <td colspan="5">
+                <div style="display: flex; justify-content: space-between; padding: 15px;">
+                    <table class="inner-table">
+
+                        <thead align="center">
+                            <!-- Nombre de las columans de la tabla de egresados -->
+                            <tr>
+                                <th>Documento</th>
+                                <th>Abrir archivo</th>
+                                <th>Historial</th>
+                                <th>Estatus</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody align="center">
+                            <tr>
+                                <td>Acta de nacimemieto</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book" onclick="historial(this)"></i>
+                                </td>
+                                <td>Pendiente</td>
+                                
+                            </tr>
+
+                            
+                            <tr>
+                                <td>Curp</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Aceptado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Preparatoria</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>*Dictamen de Revalidación o Equivalencia</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Liberacion de Servicio Social</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+
+                            <tr>
+                                <td>Liberacion de Informe Tecnico</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>**Acreditación del idioma inglés</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>***Liberación de Prácticas profesionales</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Licenciatura</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Generacion del Certificado Digital de Firma Electronica</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 1</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 2</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" class="btn btn-success">Descargar Documentos</button>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Fila de la tabla -->
+        <tr onclick="toggleDetails(this)">
+            <td>Carlos Ramírez</td>
+            <td>20478364</td>
+            <td>Carlitos@example.com</td>
+            <td>CNI</td>
+            <td>4 horas</td>
+        </tr>
+
+        <!-- Panel desplegable del egresado -->
+        <tr class="row-details">
+            <td colspan="5">
+                <div style="display: flex; justify-content: space-between; padding: 15px;">
+                    <table class="inner-table">
+
+                        <thead align="center">
+                            <!-- Nombre de las columans de la tabla de egresados -->
+                            <tr>
+                                <th>Documento</th>
+                                <th>Abrir archivo</th>
+                                <th>Historial</th>
+                                <th>Estatus</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody align="center">
+                            <tr>
+                                <td>Acta de nacimemieto</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book" onclick="historial(this)"></i>
+                                </td>
+                                <td>Pendiente</td>
+                                
+                            </tr>
+
+                            
+                            <tr>
+                                <td>Curp</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Aceptado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Preparatoria</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>*Dictamen de Revalidación o Equivalencia</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Liberacion de Servicio Social</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+
+                            <tr>
+                                <td>Liberacion de Informe Tecnico</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>**Acreditación del idioma inglés</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>***Liberación de Prácticas profesionales</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Licenciatura</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Generacion del Certificado Digital de Firma Electronica</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 1</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 2</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" class="btn btn-success">Descargar Documentos</button>
+                </div>
+            </td>
+        </tr>
+        
+        <!-- Fila de la tabla -->
+        <tr onclick="toggleDetails(this)">
+            <td>Valeria Torres</td>
+            <td>21472364</td>
+            <td>Val@example.com</td>
+            <td>Documentos</td>
+            <td>3 horas</td>
+        </tr>
+
+        <!-- Panel desplegable del egresado -->
+        <tr class="row-details">
+            <td colspan="5">
+                <div style="display: flex; justify-content: space-between; padding: 15px;">
+                    <table class="inner-table">
+
+                        <thead align="center">
+                            <!-- Nombre de las columans de la tabla de egresados -->
+                            <tr>
+                                <th>Documento</th>
+                                <th>Abrir archivo</th>
+                                <th>Historial</th>
+                                <th>Estatus</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody align="center">
+                            <tr>
+                                <td>Acta de nacimemieto</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book" onclick="historial(this)"></i>
+                                </td>
+                                <td>Pendiente</td>
+                                
+                            </tr>
+
+                            
+                            <tr>
+                                <td>Curp</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Aceptado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Preparatoria</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>*Dictamen de Revalidación o Equivalencia</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Liberacion de Servicio Social</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+
+                            <tr>
+                                <td>Liberacion de Informe Tecnico</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>**Acreditación del idioma inglés</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>***Liberación de Prácticas profesionales</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Licenciatura</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Generacion del Certificado Digital de Firma Electronica</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 1</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 2</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" class="btn btn-success">Descargar Documentos</button>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Fila de la tabla -->
+        <tr onclick="toggleDetails(this)">
+            <td>Carlos Ramírez</td>
+            <td>20478364</td>
+            <td>Carlitos@example.com</td>
+            <td>Documentos</td>
+            <td>1 hora</td>
+        </tr>
+
+        <!-- Panel desplegable del egresado -->
+        <tr class="row-details">
+            <td colspan="5">
+                <div style="display: flex; justify-content: space-between; padding: 15px;">
+                    <table class="inner-table">
+
+                        <thead align="center">
+                            <!-- Nombre de las columans de la tabla de egresados -->
+                            <tr>
+                                <th>Documento</th>
+                                <th>Abrir archivo</th>
+                                <th>Historial</th>
+                                <th>Estatus</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody align="center">
+                            <tr>
+                                <td>Acta de nacimemieto</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book" onclick="historial(this)"></i>
+                                </td>
+                                <td>Pendiente</td>
+                                
+                            </tr>
+
+                            
+                            <tr>
+                                <td>Curp</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Aceptado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Preparatoria</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>*Dictamen de Revalidación o Equivalencia</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Liberacion de Servicio Social</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+
+                            <tr>
+                                <td>Liberacion de Informe Tecnico</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>**Acreditación del idioma inglés</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>***Liberación de Prácticas profesionales</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Licenciatura</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Generacion del Certificado Digital de Firma Electronica</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 1</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 2</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" class="btn btn-success">Descargar Documentos</button>
+                </div>
+            </td>
+        </tr>
+        
+        <!-- Fila de la tabla -->
+        <tr onclick="toggleDetails(this)">
+            <td>Valeria Torres</td>
+            <td>21472364</td>
+            <td>Val@example.com</td>
+            <td>CNI</td>
+            <td>1 hora</td>
+        </tr>
+
+        <!-- Panel desplegable del egresado -->
+        <tr class="row-details">
+            <td colspan="5">
+                <div style="display: flex; justify-content: space-between; padding: 15px;">
+                    <table class="inner-table">
+
+                        <thead align="center">
+                            <!-- Nombre de las columans de la tabla de egresados -->
+                            <tr>
+                                <th>Documento</th>
+                                <th>Abrir archivo</th>
+                                <th>Historial</th>
+                                <th>Estatus</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody align="center">
+                            <tr>
+                                <td>Acta de nacimemieto</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book" onclick="historial(this)"></i>
+                                </td>
+                                <td>Pendiente</td>
+                                
+                            </tr>
+
+                            
+                            <tr>
+                                <td>Curp</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Aceptado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Preparatoria</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>*Dictamen de Revalidación o Equivalencia</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Liberacion de Servicio Social</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+
+                            <tr>
+                                <td>Liberacion de Informe Tecnico</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>**Acreditación del idioma inglés</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>***Liberación de Prácticas profesionales</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Certificado de Licenciatura</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Generacion del Certificado Digital de Firma Electronica</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 1</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>Comprobante de Pago 2</td>
+                                <td>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </td>
+                                <td>
+                                    <i class="fa-solid fa-book"></i>
+                                </td>
+                                <td>Rechazado</td>
+                                
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" class="btn btn-success">Descargar Documentos</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
