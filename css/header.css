@@ -1,6 +1,8 @@
 /* Header con nav-bar principal */
 .navbar {
-    background-color: #1B396A
+    background-color: #1B396A;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    
 }
 
 .nav-item {
@@ -11,7 +13,9 @@
 .subheader {
     padding-top: 20px;
     padding-bottom: 5px;
-    background-color: #1B646B;
+    background-color: #496899;
+    /*background-color: #1B646B;*/
+    
     color: white;
     text-align: center;
 }
