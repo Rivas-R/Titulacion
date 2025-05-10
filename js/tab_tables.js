@@ -1,87 +1,31 @@
+//Añade las tablas a cada pestaña
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("./documentos_tab.html")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load content");
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.querySelector(".documentos_tab").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading content:", error));
+    loadHTML("./general_tab.html", ".general");
+    loadHTML("./cuentas_nuevas_tab.html", ".cuentas_nuevas");
+    loadHTML("./documentos_tab.html", ".documentos_tab");
+    loadHTML("./segunda_revicion_tab.html", ".segunda_revicion");
+    loadHTML("./cni.html", ".cni");
+    loadHTML("./linea_pago.html", ".linea_pago");
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("./cni.html")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load content");
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.querySelector(".cni").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading content:", error));
-});
+function loadHTML(url, selector) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
 
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("./cuentas_nuevas_tab.html")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load content");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                document.querySelector(selector).innerHTML = xhr.responseText;
+            } else {
+                console.error("Error loading " + url + ": " + xhr.statusText);
             }
-            return response.text();
-        })
-        .then(data => {
-            document.querySelector(".cuentas_nuevas").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading content:", error));
-});
+        }
+    };
 
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("./general_tab.html")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load content");
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.querySelector(".general").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading content:", error));
-});
+    xhr.send();
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("./linea_pago.html")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load content");
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.querySelector(".linea_pago").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading content:", error));
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("./segunda_revicion_tab.html")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load content");
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.querySelector(".segunda_revicion").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading content:", error));
-});
-
+// Pop up cuando se rechasa documento
 function handleReject(button) {
     const modal = document.createElement('div');
     modal.className = 'modal-overlay';
@@ -109,6 +53,7 @@ function handleReject(button) {
     document.body.appendChild(modal);
 }
 
+//Pop up cuando se accepta documento
 function handleAccept(button) {
     const modal = document.createElement('div');
     modal.className = 'modal-overlay';
@@ -122,6 +67,7 @@ function handleAccept(button) {
     document.body.appendChild(modal);
 }
 
+//Pop up con el historial del documento
 function historial(button) {
     const modal = document.createElement('div');
     modal.className = 'modal-overlay';

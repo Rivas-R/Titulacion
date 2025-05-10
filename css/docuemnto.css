@@ -1,0 +1,518 @@
+/* ===== RESET Y ESTILOS BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* ===== CONTENEDOR PRINCIPAL (FLEXIBLE) ===== */
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    padding-left: 100px;
+}
+
+/* ==== LISTA (IZQUIERDA) - RESPONSIVE ==== */
+.lista {
+    width: 300px;
+    height: auto;
+    background: white;
+    padding: 20px;
+    padding-top: 0;
+}
+
+/* ==== DOCUMENTO (DERECHA) - RESPONSIVE ==== */
+.Documento {
+    width: 65%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+}
+
+/* ===== MEDIA QUERIES (ADAPTACIÓN A PANTALLAS PEQUEÑAS) ===== */
+
+/* Pantallas medianas (tablets, 768px - 1024px) */
+@media (max-width: 1024px) {
+    .contenedor {
+        flex-direction: column;
+        padding-left: 20px;
+    }
+
+    .lista {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .Documento {
+        width: 100%;
+        position: static;
+    }
+
+    .lista-documentos,
+    .lista-pago {
+        width: 100%;
+    }
+
+    .Documento-button {
+        width: 50%;
+    }
+}
+
+/* Pantallas pequeñas (móviles, hasta 768px) */
+@media (max-width: 768px) {
+    .contenedor {
+        padding: 10px;
+    }
+
+    .nav-box {
+        height: 60px;
+    }
+
+    .documento-header,
+    .Pago-header {
+        padding: 15px;
+    }
+
+    .Documento-button,
+    .revision-button,
+    .segunda-revision-button,
+    .rechazar-button {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .pdf-preview-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pdf-preview-center {
+        margin: 10px 0;
+        text-align: left;
+    }
+
+    .pdf-preview-right {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+.nav-item:nth-child(1) .nav-box {
+    border-bottom: 2px solid #E87A2B;
+}
+
+.nav-item:nth-child(n +3) .nav-box {
+    border-top: 2px solid #BEBEBE;
+}
+
+.nav-box{
+    height: 70px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item:not(:first-child).active .nav-box {
+    background-color: #BEBEBE;
+}
+
+.nav-item a{
+    text-decoration: none;
+    transition: opacity 0.3s, cursor 0.3s;
+}
+
+
+.nav-box p{
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.titulo {
+    align-self: flex-start; 
+    font-weight: bold;
+    margin-bottom: 20px; 
+}
+
+.lista-documentos {
+    width: 80%;
+    list-style: none;
+    padding-bottom: 100px;
+}
+
+
+/* ===== ITEMS DE DOCUMENTO ===== */
+.Documento-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.documento-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #FFFEFE;
+    cursor: pointer;
+    transition: transform 0.3s; 
+}
+
+.documento-header .icon-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.documento-header img:not(.icon) {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s;
+    object-fit: contain;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s;
+    object-fit: contain;
+}
+
+.icon.rotated {
+    transform: rotate(180deg);
+}
+
+.documento-header img.revision-icon {
+    display: none;
+    width: 35px;
+    height: 35px;
+}
+
+.documento-header.show-revision img.revision-icon,
+.documento-header.show-segunda-revision img.revision-icon,
+.documento-header.show-rechazado img.revision-icon {
+    display: block;
+}
+
+/* ===== CONTENIDO DESPLEGABLE ===== */
+.documento-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: #f9f9f9;
+    position: relative;
+    text-align: center;
+}
+
+.documento-content.active {
+    min-height: 130px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.documento-content p {
+    padding: 15px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* ===== BOTONES ===== */
+
+.lista-documentos li:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.lista-pago li:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.Documento-button {
+
+    height: 40px;
+    width: 30%;
+    background: #E87A2B;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+}
+
+/* ===== Pago ===== */
+
+.lista-pago {
+    width: 80%;
+    list-style: none;
+}   
+
+.Pago-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Añadido para bordes redondeados consistentes */
+}
+
+.Pago-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+    background: #FFFEFE;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.Pago-item:hover .Pago-header {
+    transform: translateY(-3px);
+}
+
+
+/* ===== INPUT DE ARCHIVO ===== */
+.file-input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* ===== PREVISUALIZACIÓN DE IMÁGENES ===== */
+.documento-content img {
+    max-width: 100%;
+    max-height: 70px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.documento-content:hover img {
+    transform: scale(1.05);
+}
+
+/* ===== PREVISUALIZACIÓN DE PDF ===== */
+.pdf-preview-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    min-height: 100px;
+}
+
+.pdf-preview-left {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.pdf-preview-center {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.pdf-preview-right {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.pdf-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.pdf-name {
+    font-size: 16px;
+    color: #333;
+    word-break: break-word;
+    margin-left: 15px;
+}
+
+.pdf-remove {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+.pdf-remove:hover {
+    background-color: #c0392b;
+}
+
+/* ===== MODAL PARA VISUALIZAR PDF ===== */
+.pdf-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdf-modal-content {
+    width: 90%;
+    max-width: 900px;
+    height: 90vh;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+}
+
+.pdf-modal-header {
+    padding: 15px 20px;
+    background: #2c3e50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pdf-modal-title {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.pdf-modal-close {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.pdf-modal-close:hover {
+    transform: scale(1.2);
+}
+
+.pdf-modal-iframe {
+    flex-grow: 1;
+    border: none;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.revision-button, .segunda-revision-button, .rechazar-button {
+    height: 40px;
+    width: auto;
+    min-width: 150px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.revision-button {
+    background: #1B646B;
+}
+
+.segunda-revision-button {
+    background: #E87A2B;
+    display: none;
+}
+
+.rechazar-button {
+    background: #dc3545;
+}
+
+.revision-button:disabled, .segunda-revision-button:disabled, .rechazar-button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.revision-button:hover:not(:disabled) {
+    background: #154d52;
+}
+
+.segunda-revision-button:hover:not(:disabled) {
+    background: #c65f1c;
+}
+
+.rechazar-button:hover:not(:disabled) {
+    background: #bd2130;
+}
+
+.constancia-section.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+    user-select: none;
+}
+
+.constancia-section.disabled * {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.constancia-section.disabled a {
+    pointer-events: none;
+    color: #999;
+    text-decoration: none;
+}
+
+.constancia-section.disabled button,
+.constancia-section.disabled input {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.btn-siguiente-seccion {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.btn-siguiente-seccion:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
