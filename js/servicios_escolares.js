@@ -1,3 +1,4 @@
+// Filas de tabla de alumnos desplegables
 function toggleDetails(row) {
     // Find the next sibling row (which contains the details)
     let detailsRow = row.nextElementSibling;
@@ -9,12 +10,13 @@ function toggleDetails(row) {
     }
 }
 
-// Show the PDF overlay
+// Mostrar archivo PDF
 function showPDF() {
     document.getElementById("pdfOverlay").style.display = "flex";
     console.log("Show pdf");
 }
 
+// Cerrar archivo PDF
 function closePDF(event) {
     let overlay = document.getElementById("pdfOverlay");
     
@@ -24,6 +26,6 @@ function closePDF(event) {
     }
 }
 
-// Add event listener for closing when clicking outside
+// Añade evento cuando se da click afuera del archivo pdf para que se cierre
 document.getElementById("pdfOverlay").addEventListener("click", closePDF);
 console.log("FInal aaaa");

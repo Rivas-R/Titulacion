@@ -1,0 +1,103 @@
+<table>
+    <thead>
+        <!-- Nombre de las columans de la tabla de egresados -->
+        <tr>
+            <th>Nombre</th>
+            <th>Numero de Control</th>
+            <th>Correo Electronico</th>
+            <th>Tiempo en Espera</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <!-- Fila de la tabla -->
+        <tr onclick="toggleDetails(this)">
+            <td>John Doe</td>
+            <td>20478364</td>
+            <td>john@example.com</td>
+            <td>2 dias</td>
+        </tr>
+
+        <!-- Panel desplegable del egresado -->
+        <tr class="row-details">
+            <td colspan="5">
+                <div style="display: flex; justify-content: space-between; padding: 15px;">
+                    <table class="inner-table">
+
+                        <thead align="center">
+                            <!-- Nombre de las columans de la tabla de egresados -->
+                            <tr>
+                                <th>Documento</th>
+                                <th>Subir Archivo</th>
+                                <th>Estatus</th>
+                            </tr>
+                        </thead>
+    
+                        <tbody align="center">
+                            <tr>
+                                <td>Constancia de No Inconveniencia</td>
+                                <td>
+                                    <i class="fa-solid fa-upload"></i>
+                                   <!-- <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>-->
+                                </td>
+                                <td>
+                                    Pendiente
+                                </td>
+                            </tr>
+    
+    
+                        </tbody>
+                    </table>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" class="btn btn-success">Enviar</button>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Fila de la tabla -->
+        <tr onclick="toggleDetails(this)">
+            <td>Johnanthan Does</td>
+            <td>20472365</td>
+            <td>john@example.com</td>
+            <td>2 dias</td>
+        </tr>
+
+        <!-- Panel desplegable del egresado -->
+        <tr class="row-details">
+            <td colspan="5">
+                <div style="display: flex; justify-content: space-between; padding: 15px;">
+                    <table class="inner-table">
+
+                        <thead align="center">
+                            <!-- Nombre de las columans de la tabla de egresados -->
+                            <tr>
+                                <th>Documento</th>
+                                <th>Subir Archivo</th>
+                                <th>Estatus</th>
+                            </tr>
+                        </thead>
+    
+                        <tbody align="center">
+                            <tr>
+                                <td>Constancia de No Inconveniencia</td>
+                                <td>
+                                    <i class="fa-solid fa-upload"></i>
+                                   <!-- <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>-->
+                                </td>
+                                <td>
+                                    Pendiente
+                                </td>
+                            </tr>
+    
+    
+                        </tbody>
+                    </table>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="button" class="btn btn-success">Enviar</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
