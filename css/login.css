@@ -1,0 +1,107 @@
+
+/* 视频区域优化 */
+.video {
+    width: 60%;
+    max-width: 700px;
+    aspect-ratio: 16/9;
+    background-color: skyblue;
+    min-height: 300px; /* 替代固定 vh */
+}
+
+/* 登录框优化 */
+.login {
+    width: 30%;
+    min-width: 300px; /* 添加最小宽度 */
+    max-width: 700px;
+    min-height: 400px; /* 替代固定 vh */
+    background-color: #496899;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-items {
+    display: flex;
+    margin-bottom: 20px;
+    
+}
+.login-items li{
+    width: 100%;
+    text-align: center;
+}   
+.login-items p{
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.login-items li:first-child p{
+    border-right:  1px solid #ccc;
+}
+
+.login-datos {
+    width: 80%;
+    flex: 1; /* 占满剩余空间 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px auto 0;
+    padding: 15px;
+}
+.login-datos span{
+    color: white;
+}
+
+/* 输入框样式优化 */
+.login-datos input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+/* 按钮优化 */
+.login-boton {
+    width: 70%;
+    margin: 20px auto;
+}
+
+.login-boton a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #E87A2B; /* 更好的绿色 */
+    color:white;
+}
+
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .contenido {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .video, .login {
+        width: 100%;
+        max-width: 600px;
+    }
+    
+    .video {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .login {
+        min-width: unset;
+        width: 95%;
+    }
+    
+    .login-datos {
+        width: 95%;
+    }
+}
