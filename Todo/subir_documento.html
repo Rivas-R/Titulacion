@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Documento</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- styleshetts -->
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/contenido.css">
+    <link rel="stylesheet" href="../css/subir_documento.css">
+</head>
+<body>
+
+        <!-- Header NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <!-- Legenda en la izquierda -->
+            <a class="navbar-brand" href="#">Instituto Tecnológico de Mexicali</a>
+
+            <!-- Hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Items de navegacion -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Usuario</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    <div class="titulo">
+        <h1>Subir Documento</h1>
+    </div>
+    <div class="contenido">
+        <div class="menu">
+        <ul class="nav flex-column">
+            <li class="menu-titulo ">
+                    <div class="menu-titulo">
+                        <span class="progreso">Mi progreso</span>
+                    </div>
+              </li>
+              <li class="menu-item ">
+                <div class="menu-box">
+                    <a href="../estudiante/documento.html">
+                        <p class="text">Revisión de Documentos</p> 
+                    </a>
+                </div>
+            </li>
+            <li class="menu-item">
+                <div class="menu-box">
+                    <a href="../estudiante/s_revicion.html">
+                        <p class="text">Segunda Revisión de Documentos</p>
+                    </a>
+                </div>
+            </li>
+            <li class="menu-item">
+                <div class="menu-box">
+                    <a href="../estudiante/carta.html">
+                        <p class="text">Constancia de No Incoveniencia</p>
+                    </a>
+                </div>
+            </li>
+            <li class="menu-item">
+                <div class="menu-box">
+                    <a href="../estudiante/carta.html">
+                        <p class="text">Asignación de Acto Recepcional</p>
+                    </a>
+                </div>
+            </li>
+             <li class="menu-item">
+                <div class="menu-box">
+                    <a href="../estudiante/carta.html">
+                        <p class="text">Registro de título y expedición de Cédula Profesional</p>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    
+        </div>
+       <div class="documento">
+        <p class="titulo-documento">Subir de Documentos</p> 
+        <ul class="lista-documento">
+        <!-- 示例文档项 -->
+            <li class="documento-item" data-doc-type="acta">
+            <div class="documento-header">
+                <p class="text">Acta de Nacimiento</p>
+                <div class="icon-container">
+                    <!-- <img src="../../img/revision.png" alt="Revisión" class="icon revision"> -->
+                    <img src="../../img/abajo.png" alt="Ícono" class="icon abrir">
+                </div>
+            </div>
+            <div class="upload-area"></div>
+            </li>
+        </ul>
+        <button class="continuar-button"><a href="../estudiante/s_revicion.html">Continuar</a></button>
+        </div>
+     </div>
+     <script src="../js/subir_documento.js"></script>
+    </body>
+</html>
