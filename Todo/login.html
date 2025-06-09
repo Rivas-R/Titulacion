@@ -38,52 +38,82 @@
         <div class="contenido">
             <div class="video"></div>
             <div class="login">
-  <ul class="login-items">
-    <li class="active" data-form="student">
-      <p>Estudiante</p>
-    </li>
-    <li data-form="teacher">
-      <p>Profesor</p>
-    </li>
-  </ul>
-  
-  <!-- 表单容器 -->
-  <div class="forms-container">
-    <!-- 学生表单 -->
-    <div class="login-datos active" id="student-form">
-        <div class="datos">
-            <span>Correo electrónico</span>
-            <input type="email">
-        </div>
-        <div class="datos">
-            <span>Número de control</span>
-            <input type="text">
-        </div>
-        <div class="datos">
-            <span>CURP</span>
-            <input type="password">
-        </div>
-    </div>
+                <ul class="login-items">
+                    <li class="active" data-form="student">
+                        <p>Estudiante</p>
+                    </li>
+                    <li data-form="teacher">
+                        <p>Profesor</p>
+                    </li>
+                </ul>
     
-    <!-- 教师表单 -->
-    <div class="login-datos" id="teacher-form">
-        <div class="datos">
-            <span>Cuenta institucional</span>
-            <input type="text">
-        </div>
-        <div class="datos">
-            <span>Contraseña</span>
-            <input type="password">
+                <!-- 表单容器 -->
+                <div class="forms-container">
+                    <!-- 学生表单 -->
+                    <div class="login-datos active" id="student-form">
+                        <div class="datos">
+                            <span>Correo electrónico</span>
+                            <input type="email">
+                        </div>
+                        <div class="datos">
+                            <span>CURP</span>
+                            <input type="text">
+                        </div>
+                    </div>
+    
+                    <!-- 教师表单 -->
+                    <div class="login-datos" id="teacher-form">
+                        <div class="datos">
+                            <span>Cuenta institucional</span>
+                            <input type="text">
+                        </div>
+                        <div class="datos">
+                            <span>Contraseña</span>
+                            <input type="password">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="boton">
+                    <div class="login-boton">
+                        <a href="../Todo/revisar_inf.html">Entrar</a>
+                    </div>
+                </div>
+                <div class="identificar">
+                    <p>¿No tienes acceso? <a href="#" id="toggle-identificar">Identificate</a></p>
+                </div>
+    
+                <!-- 新增身份验证表单 -->
+                <div class="identificacion-form" style="display:none;">
+                    <div class="datos">
+                        <span>Correro electrónico</span>
+                        <input type="text" required>
+                    </div>
+                    <div class="datos">
+                        <span>CURP</span>
+                        <input type="text" required>
+                    </div>
+                    <div class="datos">
+                        <span>Documento de identificación (PDF)</span>
+                        <label class="custom-upload-label">
+                            <span class="custom-upload-text">Seleccionar archivo</span>
+                            <span class="custom-upload-btn">Examinar</span>
+                            <input type="file" accept=".pdf" required style="display: none;">
+                        </label>
+                    </div>
+                    <div class="boton">
+                        <div class="login-boton">
+                            <a href="#" id="submit-identificacion">Enviar solicitud</a>
+                        </div>
+                    </div>
+                    <div class="volver-login ">
+                        <p><a href="#" id="volver-login">← Volver al login</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
-  
-  <div class="login-boton">
-    <a href="../Todo/revisar_inf.html">Entrar</a>
-  </div>
-</div>
-        </div>
     </div>
     <script src="../js/login.js"></script>
-    </body>
+</body>
 </html>

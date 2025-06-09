@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
           <label for="${docType}-upload" class="upload-label">
             <span class="file-info">Seleccionar archivo PDF (max 2.5MB)</span>
           </label>
-          <div class="file-validation"></div>
         </div>
         <div class="uploaded-display" style="display:none;">
           <span class="file-name"></span>
