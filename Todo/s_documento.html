@@ -30,10 +30,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">FAQ</a>
+                        <a class="nav-link active" aria-current="page" href="../Todo/faq.html">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                        <a class="nav-link active" aria-current="page" href="../Todo/contacto.html">Contacto</a>
                     </li>
                      <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Usuario</a>
@@ -45,7 +45,7 @@
         </div>
     </nav>
     <div class="titulo">
-        <h1>Subir Documento</h1>
+        <h1>Revisión de Documentos</h1>
     </div>
     <div class="contenido">
         <div class="menu">
@@ -56,38 +56,28 @@
                     </div>
               </li>
               <li class="menu-item ">
-                <div class="menu-box">
-                    <a href="../estudiante/documento.html">
+                <div class="menu-box active">
                         <p class="text">Revisión de Documentos</p> 
-                    </a>
                 </div>
             </li>
             <li class="menu-item">
                 <div class="menu-box">
-                    <a href="../estudiante/s_revicion.html">
                         <p class="text">Segunda Revisión de Documentos</p>
-                    </a>
                 </div>
             </li>
             <li class="menu-item">
                 <div class="menu-box">
-                    <a href="../estudiante/carta.html">
                         <p class="text">Constancia de No Incoveniencia</p>
-                    </a>
                 </div>
             </li>
             <li class="menu-item">
                 <div class="menu-box">
-                    <a href="../estudiante/carta.html">
                         <p class="text">Asignación de Acto Recepcional</p>
-                    </a>
                 </div>
             </li>
              <li class="menu-item">
                 <div class="menu-box">
-                    <a href="../estudiante/carta.html">
                         <p class="text">Registro de título y expedición de Cédula Profesional</p>
-                    </a>
                 </div>
             </li>
         </ul>
@@ -97,18 +87,29 @@
         <p class="titulo-documento">Subir de Documentos</p> 
         <ul class="lista-documento">
         <!-- 示例文档项 -->
-            <li class="documento-item" data-doc-type="acta">
+            <li class="documento-item required" data-doc-type="acta">
             <div class="documento-header">
                 <p class="text">Acta de Nacimiento</p>
                 <div class="icon-container">
-                    <!-- <img src="../../img/revision.png" alt="Revisión" class="icon revision"> -->
+                    <img src="../../img/abajo.png" alt="Ícono" class="icon abrir">
+                </div>
+            </div>
+            <div class="upload-area"></div>
+            </li>
+            <li class="documento-item required" data-doc-type="curp">
+            <div class="documento-header">
+                <p class="text">CURP</p>
+                <div class="icon-container">
                     <img src="../../img/abajo.png" alt="Ícono" class="icon abrir">
                 </div>
             </div>
             <div class="upload-area"></div>
             </li>
         </ul>
-        <button class="continuar-button"><a href="../estudiante/s_revicion.html">Continuar</a></button>
+
+            <div class="validation-error" style="display: none; color: red; margin: 10px 0;"></div>
+    
+            <button class="continuar-button">Continuar</button>
         </div>
      </div>
      <script src="../js/subir_documento.js"></script>

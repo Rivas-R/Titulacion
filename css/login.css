@@ -1,5 +1,5 @@
 
-/* 视频区域优化 */
+/*#region video */
 .video {
     width: 60%;
     max-width: 700px;
@@ -8,7 +8,9 @@
     min-height: 300px; /* 替代固定 vh */
 }
 
-/* 登录框优化 */
+/*#endregion video */
+
+/* #region login */
 .login {
     width: 30%;
     min-width: 300px; /* 添加最小宽度 */
@@ -39,7 +41,7 @@
     border-right:  1px solid #ccc;
 }
 
-.login-datos {
+.login-datos ，{
     width: 80%;
     flex: 1; /* 占满剩余空间 */
     display: flex;
@@ -70,7 +72,11 @@
     border-width: 2px;
     padding: 7px; /* 补偿边框变粗导致的内部空间减少 */
 }
-/* 按钮优化 */
+/* #endregion login */
+/* #region boton */
+.boton{
+    border-bottom: 1px solid #ccc;
+}
 .login-boton {
     width: 70%;
     margin: 20px auto;
@@ -85,6 +91,7 @@
     background-color: #E87A2B; /* 更好的绿色 */
     color:white;
 }
+/* #endregion boton */
 
 /* 添加过渡动画 */
 .login-datos {
@@ -101,7 +108,7 @@
 }/* 新增样式 - 不影响原有样式 */
 .forms-container {
   position: relative;
-  min-height: 200px; /* 根据表单高度调整 */
+  min-height: 150px; /* 根据表单高度调整 */
 }
 
 .login-datos {
@@ -150,3 +157,106 @@
         width: 95%;
     }
 }
+
+/* #region identifica */
+
+.identificar{
+    margin-top: 25px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+.identificar a{
+    color: white;
+}
+.identificar a:hover{
+    color: #E87A2B;
+}
+
+.identificacion-form span{
+    color: white;
+    font-size: 15px;
+}
+
+/* 输入框样式优化 */
+.identificacion-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease; /* 修正：transition 不是 transform */
+}
+
+.identificacion-form input:focus {
+    outline: none; /* 移除默认轮廓 */
+    border-color: #E87A2B; /* 橙色边框 */
+    border-width: 2px;
+    padding: 7px; /* 补偿边框变粗导致的内部空间减少 */
+}
+/* 统一文件上传区域样式 */
+.datos {
+  margin-bottom: 15px;
+}
+
+.datos span {
+  display: block;
+  color: white;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.datos input[type="file"] {
+  display: none; /* 隐藏原生文件输入 */
+}
+
+.datos .file-hint {
+  display: block;
+  color: #ccc;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* 自定义上传标签样式 - 与upload-label保持一致 */
+.datos .custom-upload-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: #f8f9fa;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.datos .custom-upload-label:hover {
+  border-color: #E87A2B;
+  background-color: rgba(232, 122, 43, 0.1);
+}
+
+.datos .custom-upload-text {
+  color: #666;
+}
+
+.datos .custom-upload-btn {
+  padding: 6px 12px;
+  background: #E87A2B;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.volver-login p a{
+    margin-top: 10px;
+    color: white;
+}
+.volver-login p a:hover{
+    color: #E87A2B;
+}
+/* #endregion identifica */
+
+
+
+
+
