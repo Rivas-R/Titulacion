@@ -37,14 +37,14 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Constancia de No Inconveniencia
+                            Nuevas Solicitudes
                         </a>
-                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item " href="../servicios_escolares/solicitudes_actuales.html">Solicitudes Actuales</a></li>
-                            <li><a class="dropdown-item" href="../servicios_escolares/nuevas_solicitudes.html">Nuevas Solicitudes</a></li>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../servicios_escolares/solicitudes_actuales.html">Solicitudes Actuales</a></li>
+                            <li><a class="dropdown-item active" href="../servicios_escolares/nuevas_solicitudes.html">Nuevas Solicitudes</a></li>
                             <li><a class="dropdown-item" href="../servicios_escolares/revisió_de_documentos.html">Revisión de Documentos</a></li>
                             <li><a class="dropdown-item" href="../servicios_escolares/segunda_revicion.html">Segunda Revicion</a></li>
-                            <li><a class="dropdown-item active" href="../servicios_escolares/cni.html">Constancia de No Inconveniencia</a></li>
+                            <li><a class="dropdown-item" href="../servicios_escolares/cni.html">Constancia de No Inconveniencia</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -95,7 +95,39 @@
         <!-- Panel desplegable del egresado -->
         <tr class="row-details">
             <td colspan="5">
-                <div style="display: flex; justify-content: space-between; padding: 15px;">
+                <div style="padding: 15px;">
+                    <table class="inner-table">
+
+                        <thead align="center">
+                            <!-- Nombre de las columans de la tabla de egresados -->
+                            <tr>
+                                <th>Documento</th>
+                                <th>Abrir archivo</th>
+                                <th>Historial</th>
+                                <th>Estatus</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody align="center">
+                            <tr>
+                                <td>INE</td>
+                                <td onclick=showPDF()>
+                                    <i class="fa-solid fa-file-pdf" ></i>
+                                </td>
+                                <td onclick="historial(this)">
+                                    <i class="fa-solid fa-book" ></i>
+                                </td>
+                                <td>Pendiente</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" onclick="handleAccept(this)">Accept</button>    
+                                    <button type="button" class="btn btn-danger" onclick="handleReject(this)">Reject</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="height: 30px;"></div>
                     <table class="inner-table">
 
                         <thead align="center">
@@ -106,11 +138,11 @@
                                 <th>Estatus</th>
                             </tr>
                         </thead>
-    
+
                         <tbody align="center">
                             <tr>
-                                <td>Constancia de No Inconveniencia</td>
-                                <td onclick="showUploadModal(this)"> 
+                                <td>Linea de Pago</td>
+                                <td onclick="showUploadModal(this)">
                                     <i class="fa-solid fa-upload"></i>
                                    <!-- <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>-->
                                 </td>
@@ -118,8 +150,8 @@
                                     Pendiente
                                 </td>
                             </tr>
-    
-    
+
+
                         </tbody>
                     </table>
                 </div>
@@ -129,50 +161,6 @@
             </td>
         </tr>
 
-        <!-- Fila de la tabla -->
-        <tr onclick="toggleDetails(this)">
-            <td>Johnanthan Does</td>
-            <td>20472365</td>
-            <td>john@example.com</td>
-            <td>2 dias</td>
-        </tr>
-
-        <!-- Panel desplegable del egresado -->
-        <tr class="row-details">
-            <td colspan="5">
-                <div style="display: flex; justify-content: space-between; padding: 15px;">
-                    <table class="inner-table">
-
-                        <thead align="center">
-                            <!-- Nombre de las columans de la tabla de egresados -->
-                            <tr>
-                                <th>Documento</th>
-                                <th>Subir Archivo</th>
-                                <th>Estatus</th>
-                            </tr>
-                        </thead>
-    
-                        <tbody align="center">
-                            <tr>
-                                <td>Constancia de No Inconveniencia</td>
-                                <td>
-                                    <i class="fa-solid fa-upload"></i>
-                                   <!-- <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>-->
-                                </td>
-                                <td>
-                                    Pendiente
-                                </td>
-                            </tr>
-    
-    
-                        </tbody>
-                    </table>
-                </div>
-                <div style="text-align: center; margin-top: 20px;">
-                    <button type="button" class="btn btn-success">Enviar</button>
-                </div>
-            </td>
-        </tr>
     </tbody>
 </table>
  <!-- PDF Overlay -->
@@ -182,8 +170,8 @@
             <iframe class="pdf-frame" src="../../files/ine.pdf"></iframe> 
         </div>  
     <!-- Scripts -->
+     <script src="../../js/subir_archivo.js"></script>
     <script src="../../js/servicios_escolares.js"></script>
     <script src="../../js/tab_tables.js"></script>
-    <script src="../../js/subir_archivo.js"></script>
 </body>
 </html>
