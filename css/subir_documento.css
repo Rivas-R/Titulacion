@@ -1,0 +1,322 @@
+.contenido {
+    display: flex;
+    flex-direction: column; /* 默认垂直排列 */
+    padding: 20px;
+    gap: 30px;
+}
+/* #region menu */
+.menu {
+    width: 100%; /* 移动端占满宽度 */
+    order: 1; /* 在移动端将菜单放到内容下方 */
+}
+
+.menu-titulo .progreso {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.flex-column .menu-titulo {
+    border-bottom: 1px solid #E87A2B;
+}
+.flex-column .menu-item{
+  border-bottom: 1px solid #BEBEBE;
+}
+.flex-column .menu-item:last-child {
+  border-bottom: none;
+}
+  .flex-column .menu-box {
+    height: 70px;
+    transition: all 0.5s ease;
+  }
+.flex-column .menu-box p {
+  width: 100%;            
+  height: 100%;           
+  display: flex;
+  align-items: center;
+  color: #333;           
+}
+
+.flex-column .menu-box .text {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.flex-column .menu-box.active {
+    background-color: #D9D9D9; /* 默认灰色背景 */
+}
+
+.flex-column .menu-box.active .text {
+    font-weight: bold; /* 加粗文字 */
+    color: #333; /* 深色文字 */
+}
+
+/* #endregion menu */
+
+/* #region documento */
+.documento {
+    width: 100%;
+    order: 2; /* 在移动端将内容放到上方 */
+}
+@media (min-width: 768px) {
+    .contenido {
+        flex-direction: row; /* 横向排列 */
+        align-items: flex-start;
+        padding-left: 50px;
+        gap: 50px;
+    }
+    
+    .menu {
+        flex: 0 0 250px; /* 固定宽度 */
+        order: 1; /* 恢复左侧位置 */
+    }
+    
+    .documento {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+/* 桌面尺寸 (992px+) */
+@media (min-width: 992px) {
+    .contenido {
+        padding-left: 100px;
+        gap: 150px;
+    }
+    
+    .menu {
+        flex: 0 0 300px;
+    }
+}
+
+
+
+/* 文档头部响应式 */
+.lista-documento .documento-header {
+    width: 100%; /* 移动端占满宽度 */
+    margin-left: 0;
+    height: auto;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+/* 上传区域响应式 */
+.upload-area {
+    width: 100%;
+    margin-left: 0;
+}
+
+/* 按钮响应式 */
+.continuar-button {
+    width: 80%; /* 移动端加宽 */
+    max-width: 300px; /* 桌面端限制最大宽度 */
+}
+
+/* 小屏幕优化 (576px以下) */
+@media (max-width: 576px) {
+    .lista-documento .documento-header .icon-container {
+        gap: 10px;
+    }
+    
+    .flex-column .menu-box .text {
+        font-size: 13px;
+    }
+    
+    .upload-btn, .continuar-button {
+        padding: 8px 12px;
+        line-height: normal;
+    }
+}
+
+.documento-item{
+  margin: 20px 0;
+}
+.documento .titulo-documento {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.lista-documento .documento-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 70px;
+  margin-left: 20px;
+  padding: 20px;    
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.lista-documento .documento-header .text{
+    font-size: 14px;
+}
+.lista-documento .documento-header .icon-container .icon {
+    width: 100%;
+    height: 100%;
+}
+.lista-documento .documento-header .icon-container {
+    display: flex;
+    height: 20px;
+    gap: 20px;
+}
+/* #endregion documento */
+
+/* #region subir documento */
+
+/* 上传区域样式 */
+.upload-area {
+  width: 80%;
+  margin-left: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  background: #f8f9fa;
+  border-radius: 0 0 4px 4px;
+}
+
+.upload-area.active {
+  max-height: 200px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.upload-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  cursor: pointer;
+}
+
+.upload-btn {
+  padding: 8px 15px;
+  background: #E87A2B;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.file-validation {
+  font-size: 12px;
+  color: #dc3545;
+  min-height: 18px;
+}
+
+/* 图标旋转效果 */
+.icon.abrir.active {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+/* 上传状态指示器 */
+.upload-status {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.upload-status .status-icon {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+}
+
+/* 文件已上传样式 */
+.uploaded-file {
+  display: flex;
+  align-items: center;
+  background: #e8f5e9;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.uploaded-file .file-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.remove-file {
+  color: #f44336;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* 上传区域隐藏/显示控制 */
+.upload-controls {
+  transition: all 0.3s ease;
+}
+
+.upload-controls.hidden {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* 上传文件显示区域 */
+.uploaded-display {
+  display: flex;
+  align-items: center;
+  background: #e8f5e9;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.uploaded-display .file-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.remove-file {
+  color: #f44336;
+  cursor: pointer;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+/* #endregion subir documento */
+
+/* #region button */
+.continuar-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 300px;
+    min-height: 40px;
+    background: #E87A2B;
+    border-radius: 10px;
+    padding: 0; /* 重置内边距 */
+}
+
+.continuar-button a {
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    padding: 8px 12px; /* 改用链接控制内边距 */
+}
+
+/* #endregion button */

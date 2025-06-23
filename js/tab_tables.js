@@ -72,81 +72,51 @@ function historial(button) {
     const modal = document.createElement('div');
     modal.className = 'modal-overlay';
     modal.innerHTML = `
-        <div class="modal-content-table ">
+        <div class="modal-content-table">
             <table class="inner-table">
-
-                        <thead align="center">
-                            <!-- Nombre de las columans de la tabla de egresados -->
-                            <tr>
-                                <th>Estatus</th>
-                                <th>Documento</th>
-                                <th>Tamaño</th>
-                                <th>Fecha</th>
-                                <th>Comentarios</th>
-                                
-                            </tr>
-                        </thead>
-
-                        <tbody align="center">
-                            <tr>
-                                 <td>
-                                    Rechazado
-                                </td>
-                                <td>
-                                    <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
-                                </td>
-                                <td>
-                                    1.2MB
-                                </td>
-                                <td>
-                                    24/04/2025
-                                    </td>
-                                <td>
-                                    Documento no visible
-                                </td>
-                            </tr>
-
-                            <tr>
-                                 <td>
-                                    Rechazado
-                                </td>
-                                <td>
-                                    <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
-                                </td>
-                                <td>
-                                    1.2MB
-                                </td>
-                                <td>
-                                    25/04/2025
-                                    </td>
-                                <td>
-                                    Documento no visible
-                                </td>
-                            </tr>
-
-                            <tr>
-                                 <td>
-                                    Aceptado
-                                </td>
-                                <td>
-                                    <i class="fa-solid fa-file-pdf" onclick=showPDF()></i>
-                                </td>
-                                <td>
-                                    1.2MB
-                                </td>
-                                <td>
-                                    30/04/2025
-                                    </td>
-                                <td>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
+                <thead align="center">
+                    <tr>
+                        <th>Estatus</th>
+                        <th>Documento</th>
+                        <th>Tamaño</th>
+                        <th>Fecha</th>
+                        <th>Comentarios</th>
+                    </tr>
+                </thead>
+                <tbody align="center">
+                    <tr>
+                        <td>Rechazado</td>
+                        <td><i class="fa-solid fa-file-pdf" onclick="showPDF()"></i></td>
+                        <td>1.2MB</td>
+                        <td>24/04/2025</td>
+                        <td>Documento no visible</td>
+                    </tr>
+                    <tr>
+                        <td>Rechazado</td>
+                        <td><i class="fa-solid fa-file-pdf" onclick="showPDF()"></i></td>
+                        <td>1.2MB</td>
+                        <td>25/04/2025</td>
+                        <td>Documento no visible</td>
+                    </tr>
+                    <tr>
+                        <td>Aceptado</td>
+                        <td><i class="fa-solid fa-file-pdf" onclick="showPDF()"></i></td>
+                        <td>1.2MB</td>
+                        <td>30/04/2025</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     `;
     document.body.appendChild(modal);
-}
+
+    // Cerrar al hacer clic fuera del modal
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });}
 
 function confirmAccept() {
     alert('Documento aceptado.');
